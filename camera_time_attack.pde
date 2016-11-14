@@ -20,7 +20,7 @@ void setup() {
   noStroke();
   frameRate(30);
 
-  size(1152, 720);
+  size(320, 180); //6 name=FaceTime HD Camera (Built-in),size=320x180,fps=30
 
   background(#000000);
   stroke(#ffffff);
@@ -53,12 +53,12 @@ Capture getCamera() {
   } else {
     println("Available cameras:");
     for (int i = 0; i < cameras.length; i++) {
-      println(cameras[i]);
+      println(i + " " + cameras[i]);
     }
 
     // The camera can be initialized directly using an 
     // element from the array returned by list():
-    video = new Capture(this, width, height, cameras[0]);
+    video = new Capture(this, width, height, cameras[6]);
     video.start();
   }  
   return video;
